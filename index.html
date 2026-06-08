@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>张靖瑶 | 动画师 & 分镜师 · 作品集</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FCFCF9;
+            color: #1E1E2A;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(252, 252, 249, 0.92);
+            backdrop-filter: blur(12px);
+            z-index: 100;
+            border-bottom: 1px solid #EAE8E1;
+            padding: 16px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            background: linear-gradient(135deg, #C84E31, #8B3C2A);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+        .logo p {
+            font-size: 0.8rem;
+            color: #5C5C6E;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #2D2D3A;
+            transition: color 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: #C84E31;
+        }
+
+        /* 通用 */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #EFEDE6;
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 48px;
+            letter-spacing: -0.02em;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #C84E31;
+            border-radius: 4px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        /* 卡片样式 */
+        .card {
+            background: #FFFFFF;
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #F0EFEA;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+        }
+        .skill-badge {
+            background: #F2EFE9;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #5E3A2C;
+        }
+        .image-placeholder {
+            background: #F3F1EA;
+            border-radius: 20px;
+            width: 100%;
+            aspect-ratio: 16 / 12;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: #A59F8E;
+            font-size: 0.9rem;
+            text-align: center;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .image-placeholder i {
+            font-size: 2.5rem;
+            color: #C4BCAB;
+        }
+
+        .role-name {
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin: 12px 0 6px;
+        }
+        .tag {
+            font-size: 0.75rem;
+            color: #C84E31;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* hero */
+        .hero {
+            padding: 80px 0 48px 0;
+            background: #FEFCF8;
+        }
+        .hero-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+        .hero-tagline {
+            font-size: 1.2rem;
+            color: #5E5E6F;
+            margin: 16px 0 20px;
+            border-left: 4px solid #C84E31;
+            padding-left: 20px;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 24px;
+        }
+        .contact-info span i {
+            margin-right: 8px;
+            color: #C84E31;
+        }
+
+        /* 技能网格 */
+        .skill-group {
+            margin-bottom: 40px;
+        }
+        .skill-group h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        .tool-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        /* 作品集区块 */
+        .portfolio-category {
+            margin-bottom: 64px;
+        }
+        .portfolio-category h3 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-bottom: 28px;
+            display: inline-block;
+            border-bottom: 2px solid #E5DED3;
+            padding-bottom: 6px;
+        }
+        .quote-text {
+            font-style: italic;
+            background: #F7F5F0;
+            padding: 28px 32px;
+            border-radius: 32px;
+            margin: 32px 0;
+            color: #3C2E24;
+            font-weight: 450;
+            border-left: 6px solid #C84E31;
+        }
+
+        footer {
+            background: #1E1E2A;
+            color: #D9D9E0;
+            text-align: center;
+            padding: 48px 0 32px;
+        }
+        footer a {
+            color: #E6A68F;
+            text-decoration: none;
+        }
+        @media (max-width: 900px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                padding: 0 24px;
+            }
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                gap: 16px;
+            }
+        }
+        .btn-ghost {
+            display: inline-block;
+            background: transparent;
+            border: 1.5px solid #C84E31;
+            color: #C84E31;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-ghost:hover {
+            background: #C84E31;
+            color: white;
+        }
+        .inline-icon {
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-container">
+        <div class="logo">
+            <h1>JINGYAO ZHANG</h1>
+            <p>动画师 · 分镜师 | 动态美学探索者</p>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">关于</a></li>
+            <li><a href="#skills">技能</a></li>
+            <li><a href="#portfolio">作品</a></li>
+            <li><a href="#education">教育</a></li>
+            <li><a href="#experience">实践</a></li>
+            <li><a href="#contact">联系</a></li>
+        </ul>
+    </div>
+</nav>
+
+<header class="hero" id="about">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>张靖瑶<br> <span style="color:#C84E31;">分镜 · 动画</span> 创作者</h1>
+            <div class="hero-tagline">
+                “保持好奇，忠于用户，在持续的探索中创造有温度的数字体验。”
+            </div>
+            <div class="contact-info">
+                <span><i class="fas fa-map-marker-alt"></i> 天津 / 北京</span>
+                <span><i class="fas fa-envelope"></i> 1320683588@qq.com</span>
+                <span><i class="fas fa-phone-alt"></i> +86 185-2675-8746</span>
+                <span><i class="fas fa-briefcase"></i> 全职 · 期望薪资 10k</span>
+            </div>
+            <div style="margin-top: 28px;">
+                <a href="#portfolio" class="btn-ghost"><i class="fas fa-arrow-down"></i> 探索作品集</a>
+            </div>
+        </div>
+        <div class="hero-quote">
+            <div class="quote-text" style="max-width: 400px;">
+                <i class="fas fa-quote-left" style="margin-right: 8px; color:#C84E31;"></i> 镜头服务于故事，节奏优先于特效，迭代即是常态。
+            </div>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- 关于我 详情 -->
+    <div class="container" id="about-detail">
+        <div style="background:#F7F5F0; border-radius: 48px; padding: 40px; margin-bottom: 20px;">
+            <div class="grid-2">
+                <div>
+                    <h2 style="font-size: 1.8rem; margin-bottom: 20px;">关于我</h2>
+                    <p style="margin-bottom: 16px;"><strong>张靖瑶</strong>，21岁，动画专业本科在读（景德镇陶瓷大学），意向岗位为分镜师，求职城市天津/北京。熟练掌握MAYA、Photoshop、After Effects、Premiere等软件，具备3年系统学习与实践经验，能独立完成角色建模、动画制作、后期合成全流程。</p>
+                    <p>在校期间多次获得奖学金及“优秀干部”称号，担任班长及项目组长，参与“景德镇陶瓷文旅IP的动漫化设计”等校级项目。代表作品：二维动画短片《小奇》《云朵面包店》。具备创意表达、团队协作与项目统筹能力。</p>
+                </div>
+                <div>
+                    <h3 style="font-weight: 600; margin-bottom: 16px;">设计信条</h3>
+                    <ul style="list-style: none;">
+                        <li><i class="fas fa-film" style="color:#C84E31; width: 28px;"></i> 镜头服务于故事 — 不炫技、不堆砌，让每一帧推动情绪。</li>
+                        <li style="margin-top: 12px;"><i class="fas fa-waveform" style="color:#C84E31; width: 28px;"></i> 节奏优先于特效 — 好的分镜像呼吸一样张弛有度。</li>
+                        <li style="margin-top: 12px;"><i class="fas fa-sync-alt" style="color:#C84E31; width: 28px;"></i> 迭代即是常态 — 在修改中逼近最精准的表达。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 核心技能 -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">核心技能</h2>
+            <div class="grid-2" style="margin-bottom: 48px;">
+                <div class="card">
+                    <i class="fas fa-cubes" style="font-size: 2rem; color:#C84E31; margin-bottom: 16px;"></i>
+                    <h3>动画全流程制作</h3>
+                    <p>熟悉从剧本、分镜、原画到后期合成完整流程。独立完成二维/三维短片规划与执行，具备导演统筹经验（课程作品《小奇》）。</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-pen-fancy" style="font-size: 2rem; color:#C84E31; margin-bottom: 16px;"></i>
+                    <h3>分镜设计与镜头语言</h3>
+                    <p>擅长拆分镜头，运用景别切换、镜头运动传递情绪，叙事效率与视觉引导力强。让每一组分镜服务于故事核心。</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-cube" style="font-size: 2rem; color:#C84E31; margin-bottom: 16px;"></i>
+                    <h3>三维制作 (MAYA)</h3>
+                    <p>精通MAYA角色建模、骨骼绑定、关键帧动画、粒子特效及场景渲染。独立完成模型搭建到动画输出，擅长自然运动轨迹与细腻表情动画。</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-video" style="font-size: 2rem; color:#C84E31; margin-bottom: 16px;"></i>
+                    <h3>后期与剪辑能力</h3>
+                    <p>熟练使用AE特效合成、Premiere剪辑节奏把控，Photoshop绘制纹理及海报，辅助项目视觉呈现。</p>
+                </div>
+            </div>
+
+            <div class="skill-group">
+                <h3><i class="fas fa-tools"></i> 工具与软件</h3>
+                <div class="tool-list">
+                    <span class="skill-badge">MAYA (精通)</span><span class="skill-badge">Blender (基础)</span><span class="skill-badge">Photoshop</span>
+                    <span class="skill-badge">After Effects</span><span class="skill-badge">Premiere Pro</span><span class="skill-badge">Procreate</span>
+                    <span class="skill-badge">Office / 钉钉 / 腾讯文档</span>
+                </div>
+            </div>
+            <div class="skill-group">
+                <h3><i class="fas fa-users"></i> 软技能</h3>
+                <div class="tool-list">
+                    <span class="skill-badge">跨角色沟通协作</span><span class="skill-badge">批判性思维 & 解决问题</span>
+                    <span class="skill-badge">统筹领导力 (班长/组长)</span><span class="skill-badge">时间管理 & 项目推进</span>
+                </div>
+                <p style="margin-top: 16px; color: #5B5B6E;">专业工具是硬实力的基石，而沟通、协作与解决问题的软技能，则是串联团队与项目价值的关键纽带。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 精选作品集 -->
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">精选作品集</h2>
+            <p style="margin-bottom: 32px;">负责动画前期与中期核心环节：从角色造型、分镜叙事、运动规律到场景氛围的全流程视觉设计。</p>
+
+            <!-- 角色设计 -->
+            <div class="portfolio-category">
+                <h3><i class="fas fa-user-astronaut"></i> 角色设计</h3>
+                <div class="grid-3">
+                    <div class="card">
+                        <img src="角色1.PNG"alt="西纳西芙角色设计" style="width:100%; border-radius:20px; margin-bottom:20px;">
+                        <div class="tag">蛇蛋时期 · 夜光感</div>
+                        <div class="role-name">西纳西芙</div>
+                        <p>蛇蛋时期独特花纹并散发绿光，成年后绿色眼睛，皮肤鳞片带有夜光感，对暗环境敏感。</p>
+                    </div>
+                    <div class="card">
+                        <img src="角色2.PNG"alt=" 左琳角色设计"style="width:100%; border-radius:20px; margin-bottom:20px;">
+
+                        <div class="tag">蛇王形态 · 威严冷冽</div>
+                        <div class="role-name">左琳</div>
+                        <p>冷色调鳞甲、细长瞳孔，攻击性轮廓线条，保留蛇尾与竖瞳等原始特征，压迫感十足。</p>
+                    </div>
+                    <div class="card">
+                        <img src="角色3.PNG"alt="索伊斯角色设计"style="width:100%; border-radius:20px; margin-bottom:20px;">
+
+                        <div class="tag">猎手后裔 · 爱装酷</div>
+                        <div class="role-name">索伊斯</div>
+                        <p>不对称外套、护目镜、短披风，配饰带有猎手家族徽记，时髦又神秘的人类外形。</p>
+                    </div>
+                </div>
+                <div class="card" style="margin-top: 20px;">
+                    <h4>🎨 抽象角色设计</h4>
+                    <p>风格化人类角色 + 拟人化动物角色创作方向，包含头像多角度视图、表情设定练习，形成多套完整角色方案。</p>
+                </div>
+            </div>
+
+            <!-- 分镜设计 + 动态分镜 -->
+            <div class="portfolio-category">
+    <h3><i class="fas fa-storyboard"></i> 分镜 & 动态叙事 · 连续滑动画廊</h3>
+    <!-- 横向滚动容器（鼠标可拖动/有滚动条） -->
+    <div style="overflow-x: auto; white-space: nowrap; padding-bottom: 20px; margin-bottom: 24px; -webkit-overflow-scrolling: touch;">
+        <div style="display: inline-flex; gap: 16px;">
+            <!-- 以下为 14 张分镜图片，请确保图片文件名与之一致 -->
+            <img src="分镜1.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜2.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜3.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜4.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜5.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜6.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜7.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜8.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜9.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜10.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜11.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜12.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜13.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="分镜14.JPG" style="height: 240px; width: auto; border-radius: 20px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        </div>
+    </div>
+    <!-- 保留原有说明卡片（可选） -->
+    <div class="card" style="margin-top: 16px;">
+        <p>📖 分镜设计包含原创作品《儿时记忆》《吃惊》《云朵面包店》《芦苇-续》等，连续滑动查看14张精选分镜画面。</p>
+        <div class="tool-list"><span class="skill-badge">镜头语言</span><span class="skill-badge">情绪递进</span><span class="skill-badge">节奏控制</span></div>
+    </div>
+</div>
+                         <div class="card">
+    <video controls width="100%" style="border-radius: 20px; margin-bottom: 20px;">
+        <source src="动态分镜—小猫.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+    </video>
+    <h4>小猫觅食</h4>
+    <p>抽象风格，小猫咪从蛋壳里出生到吃奶的过程，运动节奏细腻，展现叙事温情。</p>
+</div>
+                       <div class="card">
+    <video controls width="100%" style="border-radius: 20px; margin-bottom: 20px;">
+        <source src="动态分镜—恐怖.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+    </video>
+    <h4>吃惊</h4>
+    <p>病娇闯入少女住所制造的恐怖事件，镜头剪辑紧凑，悬念与冲击力十足。</p>
+</div>
+
+            <!-- 动画规律 · 可交互预览（10个卡片，蝴蝶飞行） -->
+<div class="portfolio-category">
+    <h3><i class="fas fa-chart-line"></i> 动画规律实践 · 点击卡片预览 GIF</h3>
+
+    <!-- 预览区域 -->
+    <div id="animationPreview" style="background: #F7F5F0; border-radius: 28px; padding: 24px; margin-bottom: 32px; text-align: center; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <img id="previewGif" src="" alt="动画预览" style="max-width: 100%; max-height: 240px; border-radius: 16px; display: none; box-shadow: 0 6px 14px rgba(0,0,0,0.1);">
+        <p id="previewText" style="color: #8B7F6E; margin: 0;">✨ 点击任意规律卡片，查看对应的 GIF 动图</p>
+    </div>
+
+    <!-- 卡片网格 -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 24px;" id="animationCards">
+        <!-- 1. 小球滚动 -->
+        <div class="card clickable-card" data-gif="ball_roll.gif" data-name="小球滚动">
+            <i class="fas fa-circle" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">小球滚动</h4>
+        </div>
+        <!-- 2. 小球弹跳 -->
+        <div class="card clickable-card" data-gif="ball_bounce.gif" data-name="小球弹跳">
+            <i class="fas fa-chart-line" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">小球弹跳 · 预备与缓冲</h4>
+        </div>
+        <!-- 3. 烟雾运动 -->
+        <div class="card clickable-card" data-gif="smoke.gif" data-name="烟雾运动">
+            <i class="fas fa-smog" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">烟雾运动 · 粒子形态演变</h4>
+        </div>
+        <!-- 4. 猫咪跑步 -->
+        <div class="card clickable-card" data-gif="cat_run.gif" data-name="猫咪跑步">
+            <i class="fas fa-cat" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">猫咪跑步 · 四足运动</h4>
+        </div>
+        <!-- 5. 行走循环 -->
+        <div class="card clickable-card" data-gif="walk_cycle.gif" data-name="行走循环">
+            <i class="fas fa-walking" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">行走循环 · 重心转移</h4>
+        </div>
+        <!-- 6. 蝴蝶飞行（原昆虫/小鸟，已改为蝴蝶） -->
+        <div class="card clickable-card" data-gif="butterfly_fly.gif" data-name="蝴蝶飞行">
+            <i class="fas fa-butterfly" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">蝴蝶飞行 · 轻盈振翅</h4>
+        </div>
+        <!-- 7. 水滴滴落 -->
+        <div class="card clickable-card" data-gif="water_drop.gif" data-name="水滴滴落">
+            <i class="fas fa-tint" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">水滴滴落 · 弹性形变</h4>
+        </div>
+        <!-- 8. 鸟类飞行 -->
+        <div class="card clickable-card" data-gif="bird_fly.gif" data-name="鸟类飞行">
+            <i class="fas fa-feather-alt" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">鸟类飞行 · 翼展起伏</h4>
+        </div>
+        <!-- 9. 鱼类游动 -->
+        <div class="card clickable-card" data-gif="fish_swim.gif" data-name="鱼类游动">
+            <i class="fas fa-fish" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">鱼类游动 · 波形推进</h4>
+        </div>
+        <!-- 10. 蜜蜂飞行 -->
+        <div class="card clickable-card" data-gif="bee_fly.gif" data-name="蜜蜂飞行">
+            <i class="fas fa-bug" style="color:#C84E31;"></i>
+            <h4 style="margin-top: 12px;">蜜蜂飞行 · 高频振翅</h4>
+        </div>
+    </div>
+    <p style="margin-top: 28px; color: #5B5B6E;">覆盖预备动作、跟随重叠、运动轨迹等核心动画法则，点击卡片预览动态效果。</p>
+</div>
+
+<script>
+    (function() {
+        const previewImg = document.getElementById('previewGif');
+        const previewText = document.getElementById('previewText');
+        const cards = document.querySelectorAll('.clickable-card');
+        cards.forEach(card => {
+            card.addEventListener('click', function() {
+                const gifSrc = this.getAttribute('data-gif');
+                const name = this.getAttribute('data-name');
+                if (gifSrc) {
+                    previewImg.src = gifSrc;
+                    previewImg.style.display = 'block';
+                    previewText.innerHTML = `🎬 正在预览：${name}`;
+                    previewImg.onerror = () => {
+                        previewText.innerHTML = `⚠️ 未找到文件 “${gifSrc}”<br>请将 ${name} 的 GIF 命名为 “${gifSrc}” 并放在同一目录下。`;
+                        previewImg.style.display = 'none';
+                    };
+                }
+            });
+        });
+    })();
+</script>
+
+<style>
+    .clickable-card {
+        cursor: pointer;
+        transition: all 0.2s ease;
+        text-align: center;
+    }
+    .clickable-card:hover {
+        transform: translateY(-6px);
+        background: #FFFBF5;
+        border-color: #C84E31;
+        box-shadow: 0 12px 20px rgba(200, 78, 49, 0.1);
+    }
+</style>
+
+            <!-- 场景设计：三个卡片（匹配用户实际作品描述） -->
+<div class="portfolio-category">
+    <h3><i class="fas fa-tree"></i> 场景设计</h3>
+    <div class="grid-3">
+        <!-- 卡片1：水母化共生空间 -->
+        <div class="card">
+            <img src="场景设计1.JPG" alt="水母化共生空间" style="width:100%; border-radius:20px; margin-bottom:16px;">
+            <h4>水母化共生空间</h4>
+            <p>以水母为大型体设计的共生空间，梦幻漂浮的生态场景。</p>
+        </div>
+        <!-- 卡片2：金色叶浪（深海海报灵感） -->
+        <div class="card">
+            <img src="场景设计2.PNG" alt="金色叶浪" style="width:100%; border-radius:20px; margin-bottom:16px;">
+            <h4>金色叶浪</h4>
+            <p>参考深海海报创作，温馨的金色叶浪，光影柔和富有诗意。</p>
+        </div>
+        <!-- 卡片3：白蛇与蛇妖 · 竹林幽境 -->
+        <div class="card">
+            <img src="场景设计3.PNG" alt="白蛇与蛇妖 · 竹林" style="width:100%; border-radius:20px; margin-bottom:16px;">
+            <h4>白蛇·竹林妖境</h4>
+            <p>两条白蛇和一位蛇妖，绿色竹林营造神秘幽静氛围。</p>
+        </div>
+    </div>
+</div>
+
+    <!-- 教育背景 -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">教育背景</h2>
+            <div class="card" style="padding: 32px;">
+                <h3>景德镇陶瓷大学 · 动画专业 本科 | 2023.09 – 2026.06 (在读)</h3>
+                <p style="margin: 12px 0;">主修动画原理、分镜设计、角色建模等核心课程；荣获校级二等奖学金及“优秀干部”称号，构建扎实动画创作体系。</p>
+                <p>参与校级项目《景德镇陶瓷文旅IP的动漫化设计》并担任组长，积累跨学科协作与项目落地经验。课程作品《小奇》获校级课程优秀评价，奠定动画全流程实践基础。</p>
+                <div class="tool-list" style="margin-top: 20px;"><span class="skill-badge">二等奖学金</span><span class="skill-badge">优秀学生干部</span><span class="skill-badge">校级文创项目组长</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实践经验 -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">实践经验</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <div class="tag"><i class="far fa-calendar-alt"></i> 2024.05.01 – 2024.05.30</div>
+                    <h3>二维动画短片《小奇》</h3>
+                    <p><strong>导演 / 核心分镜负责人</strong> · 课程设计温馨主题动画</p>
+                    <ul style="margin: 16px 0 0 20px;">
+                        <li>独立完成剧本、全套分镜绘制，设计2款卡通角色及5个场景美术。</li>
+                        <li>使用Procreate完成全片绘制，AE+PR后期合成、音效剪辑。</li>
+                        <li>优化绘制与分镜流程，场景绘制效率提升30%，动作设计失误率＜5%。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <div class="tag"><i class="far fa-calendar-alt"></i> 2025.05 – 2026.05</div>
+                    <h3>景德镇陶瓷文旅IP的动漫化设计</h3>
+                    <p><strong>项目组长</strong> · 校级文创动漫IP项目</p>
+                    <ul style="margin: 16px 0 0 20px;">
+                        <li>统筹整体规划，参与IP形象设定、故事脚本与分镜构思。</li>
+                        <li>协调团队分工，把控项目进度与视觉风格，平衡美学与技术实现。</li>
+                        <li>积累设计到开发的全流程实战经验，强调落地性与协作价值。</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="quote-text" style="margin-top: 40px;">
+                <i class="fas fa-lightbulb"></i> 不止于执行，更善于在协作中推动项目价值，将创意转化为扎实的动画作品。
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <div class="card" style="text-align: center; padding: 48px 28px;">
+                <i class="fas fa-envelope-open-text" style="font-size: 3rem; color:#C84E31; margin-bottom: 20px;"></i>
+                <h3>期待与您交流合作</h3>
+                <p style="margin: 16px 0;">电子邮箱：<strong>1320683588@qq.com</strong>  /  备用：18526758746@163.com</p>
+                <p>联系电话：<strong>+86 185-2675-8746</strong></p>
+                <div style="margin-top: 28px;">
+                    <span class="skill-badge">天津 / 北京 · 随时到岗</span>
+                    <span class="skill-badge">全职 · 分镜师/动画师</span>
+                </div>
+                <p style="margin-top: 32px; font-size: 0.9rem;">感谢您花时间浏览我的作品集，期待与您进一步探讨动画的更多可能性。</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>© 2026 张靖瑶 JINGYAO ZHANG — 动画师 & 分镜师作品集</p>
+        <p style="margin-top: 12px; font-size: 0.85rem;">探索动态美学，用设计赋予作品温度与灵魂  |  <i class="fas fa-heart" style="color:#E6A68F;"></i>  保持好奇，持续创作</p>
+        <p><a href="#about">返回顶部</a></p>
+    </div>
+</footer>
+</body>
+</html>
